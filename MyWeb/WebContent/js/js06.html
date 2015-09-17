@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var y1 = 10;
+	var y2 = 250;
+	var ay1=0;
+	var ay2=0;
+	var x=0;
+	var ax=0;
+	
+	window.addEventListener('load', function() {
+		var can = document.querySelector("#cv");
+		var ct = can.getContext("2d");
+
+		timer = setInterval(function() {
+
+			ct.clearRect(0,0,can.width,can.height);
+			
+			ct.beginPath();
+			ct.moveTo(50+x, 200);
+			ct.bezierCurveTo(100+x,y1,170+x,y2,350+x,200);
+			ct.lineWidth = 2;
+			ct.strokeStyle = "blue";
+			ct.stroke();
+			
+			
+			if(y1>=300){ay1=1;}else if(y1<=100){ay1=0;}
+			if(y2>=300){ay2=1;}else if(y2<=100){ay2=0;}
+			if(x>=200){ax=1;}else if(x<=0){x=0;}
+			
+			
+			if(ax==0){x++;}else if(ax==1){x--;}
+			if(ay1==0){y1++;}else if(ay1==1){y1--;}
+			if(ay2==0){y2++;}else if(ay2==1){y2--;}
+			
+		}, 5);
+
+	});
+</script>
+</head>
+<body>
+	<canvas id="cv" width="800" height="300"></canvas>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+	$(jqueryOk);
+	function jqueryOk() {
+		$('#log').on('click', function(evt) {
+			
+			var ID = $('#ID').val();
+			var pass = $('#pass').val();
+			
+			$.post('login.jsp', {
+				"id" : ID,
+				"pass" : pass
+			}, function(res) {
+				if(res.ok){alert('성공');}
+				else{alert('실패');} 
+			}, 'json');
+			evt.preventDefault();
+		});
+	}
+</script>
+</head>
+<body>
+	<form id="loginBox">
+		<input type="text" id="ID"><br> <input type="password"
+			id="pass"><br>
+		<button id="log" type="submit">LOGIN</button>
+	</form>
+</body>
+</html>

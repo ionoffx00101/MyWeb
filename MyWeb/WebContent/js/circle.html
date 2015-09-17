@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+var x=25;
+var y=25;
+var x1=0;
+var y1=0;
+
+
+window.addEventListener('load', function() {
+	var can=document.querySelector("#cv");
+	var ct = can.getContext("2d");
+	timer= setInterval(function () {
+		
+		
+		ct.clearRect(0,0,can.width,can.height);
+		
+		ct.beginPath();
+	
+		ct.arc(x,y,25,0,2*Math.PI);
+		ct.closePath();
+        ct.strokeStyle="blue";
+		ct.lineCap='butt';
+        ct.stroke(); 
+		
+        ct.shadowColor='black';
+        ct.shadowOffsetX=-15;
+        ct.shadowOffsetY=10;
+        ct.shadowBlur=20;
+        
+        
+        var grd=ct.createRadialGradient(x+9,y-9,2,x+9,y-9,30);
+        
+        grd.addColorStop(0,'white');
+        
+        grd.addColorStop(0.85,'green');
+        grd.addColorStop(1,'#555555');
+        
+		ct.fillStyle=grd;
+		ct.fill();
+	
+		
+		
+		
+		if(x>=375){x1=1;}else if(x<=25){x1=0;}
+		if(y>=275){y1=1;}else if(y<=25){y1=0;}
+			
+		if(x1==0){x++;}else if(x1==1){x--;}
+		if(y1==0){y++;}else if(y1==1){y--;}
+		 
+		/* if(x>=950||y>=450){clearInterval(timer)}; */
+	}, 50);
+});
+</script>
+<style type="text/css">
+canvas{border: 1px solid black}
+</style>
+</head>
+<body>
+	<canvas id="cv" width="400" height="300"></canvas>
+</body>
+</html>

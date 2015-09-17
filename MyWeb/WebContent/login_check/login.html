@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+form {border: 1px solid #dddddd;}
+
+</style>
+
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+$(check);
+
+function check() {
+	$('form button').eq(0).click(function(evt){
+		
+		var serializedData = $('form').eq(0).serialize();
+		
+		$.post('../Login_Check', serializedData, function(res) {
+			if(res.isOk){alert('이미 있는 아이디입니다');}
+			else{alert('사용가능한 아이디입니다');} 
+		}, 'json');
+		
+		
+		 evt.preventDefault(); 
+		
+	});
+}
+</script>
+</head>
+<body>
+<form name="Check_num">
+ID : <input type="text" name="id">
+<button type="submit" name="button">중복검사</button>
+</form>
+</body>
+</html>

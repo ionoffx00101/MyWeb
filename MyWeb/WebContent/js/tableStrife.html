@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+ window.addEventListener('load'	,function () {
+		var list = document.querySelectorAll("tr");
+		var color = '';
+		for (var i = 0; i < list.length; i++) {
+			if (i % 2 == 0)
+				color = 'lightblue';
+			else
+				color = 'white';
+			list[i].style.backgroundColor = color;
+		}
+	})
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>실험용 테이블</td>
+		</tr>
+		<tr>
+			<td>실험용 테이블</td>
+		</tr>
+		<tr>
+			<td>실험용 테이블</td>
+		</tr>
+		<tr>
+			<td>실험용 테이블</td>
+		</tr>
+		<tr>
+			<td>실험용 테이블</td>
+		</tr>
+		<tr>
+			<td>실험용 테이블</td>
+		</tr>
+		<tr>
+			<td>실험용 테이블</td>
+		</tr>
+		<tr>
+			<td>실험용 테이블</td>
+		</tr>
+	</table>
+</body>
+</html>

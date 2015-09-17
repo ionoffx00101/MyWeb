@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* function guguTest(num) {
+		alert(gugu2(num));
+	}
+
+	function guguCreate(num) {
+		var gugu = '';
+		for (i = 2; i < 10; i++) {
+			gugu = gugu + num + 'X' + i + '=' + (num * i) + '\n'
+		}
+		return gugu;
+	}
+	var gugu2 = function(num) {
+		var gugu = '';
+		for (i = 2; i < 10; i++) {
+			gugu = gugu + num + 'X' + i + '=' + (num * i) + '\n'
+		}
+		return gugu;
+
+	} */
+
+	/* function() {alert('f1')}();  <-- 오류
+	 (function() {alert('f1')})();  <--실행 가능*/
+
+	/* 	function test1() {
+	 var str = 'hello';
+	 var f = function() {
+	 alert(str);
+	 };
+	 return f;
+	 }
+
+	 function test2() {
+	 var f = test1();
+	 f();
+	 }  */
+
+	/* function  test() {
+		var cnt=0;
+		//임의 코드 추가
+		var f= function () {
+			return ++cnt;
+		}
+		return f;
+	}
+	
+	
+	
+	test=test();
+	
+	test();
+	test();
+	var cnt= test();
+	alert(cnt); //3이 출력 되록 하시오 */
+/* 
+ 	function timeTest() {
+		alert('버튼인식'); 
+		setTimeout(time, 5000);
+
+	}
+	function time() {
+		console.log('5초경과');
+		alert('5초경과');
+
+	}  */
+	//DOM
+	//id가 btndls 버튼의 참조를 구한다
+	/* function init() {
+
+		var dtn = document.querySelector("#btn");
+		btn.addEventListener('click', timeTest);
+
+		var domObj = document.querySelector("#btn2");
+		domObj.addEventListener('click', timeTest);
+
+		var domObj = document.querySelector("#t1");
+		domObj.addEventListener('focus', function(evt){this.value = '';});
+
+	} */
+	
+	function init() {
+		var popWin= window.open('', 'popup', 'toolbar=no,status=no,width=300,height=200;');
+		/* window.document.write("");
+		popWin.document.write(""); */
+		
+	}
+	
+/*  	function reset(evt) {
+		alert('발생한 이벤트의 종류' + evt.type);
+		 var t1 = document.querySelector("#t1");
+		t1.value=''; 
+		evt.target.value = '';
+	}
+	function formCheck() {
+		var domObj = document.querySelector("#t1");
+		if(domObj.value==''){alert('입력부터 하지?'); return false;}else return true;
+		
+	}  */
+</script>
+
+</head>
+<body onload="init();">
+
+<!-- 
+	<button type="button" onclick="javascript:guguTest(2)">2</button>
+	<button type="button" onclick="javascript:guguTest(3)">3</button>
+	<button type="button" onclick="javascript:guguTest(4)">4</button>
+	<button type="button" onclick="javascript:guguTest(5)">5</button>
+	<button type="button" onclick="javascript:guguTest(6)">6</button>
+	<button type="button" onclick="javascript:guguTest(7)">7</button>
+	<button type="button" onclick="javascript:guguTest(8)">8</button>
+	<button type="button" onclick="javascript:guguTest(9)">9</button>
+
+
+	<br>
+	<button type="button" id="btn">test</button>
+
+	<button type="button" id="btn2">test2</button> -->
+	
+	<output id="out">안녕하세요</output>
+	<!-- <form name="form1" method="post" action="http://google.co.kr" onsubmit="return formCheck();">
+		<input type="text" id="t1" value="아이디를 입력해주세요">
+		<button type="submit">서브밋</button>
+	</form> -->
+
+</body>
+</html>

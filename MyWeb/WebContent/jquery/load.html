@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+	$(jqueryOk);
+	function jqueryOk() {
+		$('#call').click(function(evt) {
+			evt.preventDefault();
+			$('#div1').load('hello.jsp');
+
+		});
+		/*$('#유재석').mouseover(function(evt) {
+			evt.preventDefault();
+			$('#div1').load('hello.jsp #you');
+		});
+		
+		$('#김종국').mouseover(function(evt) {
+			evt.preventDefault();
+			$('#div1').load('hello.jsp #kim');
+		});
+		
+		$('#이광수').mouseover(function(evt) {
+			evt.preventDefault();
+			$('#div1').load('hello.jsp #lee');
+		});*/
+
+		$('a').mouseover(function(evt) {
+			evt.preventDefault();
+			var fn = $(this).attr('Data-fn');
+			$('#div1').load('hello.jsp?fn=' + fn, function(res) {
+				var obj = eval('(' + res + ')');
+				/* alert(obj.fn); */
+				var img= $('<img>').attr('src','../Images/'+obj.fn);
+				$(this).html(img);
+
+			});
+		});
+
+	}//회원 이름을 클릭하면 해당 회원의 사진이 화면에 출력되도록 작성
+</script>
+</head>
+<body>
+	<button id="call">호출</button>
+	<a Data-fn='ex'>폭발</a>
+	<a Data-fn='leftA'>화살좌</a>
+	<a Data-fn='rightA'>화살우</a>
+	<div id="div1"></div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	/* var x = 0;
+	var y = 0; */
+	var can;
+	var ct;
+	
+
+	function Point(x, y) {
+		this.x = x;
+		this.y = y;
+	}
+
+	window.addEventListener('load', function() {
+		can = document.querySelector("#cv");
+		ct = can.getContext("2d");
+
+		spriteSheet = new Image();
+		spriteSheet.onload = function(evt) {
+			alert('이미지로드 완료');
+			timer = setInterval(Anim, 30);
+		}
+
+		for (var y = 0; y < 4; y++) {
+			for (var x = 0; x < 4; x++) {
+				if (x == 3 && y == 3)
+					break;
+				arrPoint.push(new Point(x * 64, y * 64))
+			}
+		}
+		spriteSheet.src = '../Images/스프라이트.png';
+	});
+
+	var idx = 0;
+	function Anim() {
+
+		ct.clearRect(0, 0, can.width, can.height);
+		ct.drawImage(spriteSheet, arrPoint[idx].x, arrPoint[idx].y, 64, 64,
+				100, 100, 64, 64);
+		;
+		if (++idx == arrPoint.length) {
+			idx = 0;
+		}
+
+	}
+
+	
+</script>
+<style type="text/css">
+canvas {
+	border: 1px solid black
+}
+</style>
+</head>
+<body>
+	<canvas id="cv" width="800" height="300"></canvas>
+</body>
+</html>

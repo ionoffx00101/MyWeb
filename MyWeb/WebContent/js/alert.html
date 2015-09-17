@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function alertTest() {
+		var al = window.alert;
+		alertAction(al, '얼럿 테스트');
+	}
+	
+	function alertAction(al, msg) {
+		al(msg);
+	}
+</script>
+</head>
+<body>
+
+	<button type="button" onclick="javascript:alertTest()">얼럿 테스트</button>
+</body>
+</html>

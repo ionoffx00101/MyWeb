@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.bgBlue {
+	background-color: blue;
+}
+
+.bgRed {
+	background-color: red;
+}
+</style>
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+	$(jqueryOk);
+	function jqueryOk() {
+		var color = 'bgRed';
+		$('#btn1').click(function() {
+
+			$('div div').removeClass('bgBlue').removeClass('bgRed')
+			//jquery는 실행후에 변경된 값을 도려 주기 때문에 연쇄 호출이 가능하다 
+			//위코드는 bgBlue를 지우고 받은 div 의 아래에 있는 div의 bgRed 클래스 까지 지운것
+			color = color == 'bgRed' ? 'bgBlue' : 'bgRed';
+			$('div div').addClass(color);
+
+			$('div div').each(function(i) {
+				if ($(this).hasClass('bgBlue')) {
+					$(this).removeClass('bgBlue');
+					$(this).addClass('bgRed');
+				} else {
+					$(this).removeClass('bgRed');
+					$(this).addClass('bgBlue');
+				}
+
+			});
+			//each는 셀렉팅한 것을 순차적으로 꼽아 적용시킨다(for루프의 효과 있다)
+
+		});
+	}
+</script>
+</head>
+<body>
+	<div style='border: 5px solid blue;'>
+		여기는 DIV 입니다
+		<div>여기는 내부 DIV 입니다</div>
+	</div>
+	<button id="btn1">배경 변경 버튼</button>
+
+</body>
+</html>

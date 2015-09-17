@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.bgBlue {
+	background-color: blue;
+}
+
+.bgRed {
+	background-color: red;
+}
+</style>
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+	//jQuery(document).ready(jqueryOk);
+
+	$(jqueryOk); //jQuery(document).ready(jqueryOk); 와 같은 의미다 jQuery함수는 줄여서 $ 라고 쓰기도 한다
+
+	function jqueryOk() {
+		//alert('jQuery Ready OK');
+		//document.querySelector('#div1').innerHTML='<b>Hello wolrd</b>'; // <--표준 쿼리 선택, 변경법
+		//$('#div1').html('<b>Hello wolrd</b>');//<-- jQuery로 축약된 쿼리 선택, 변경
+		//$('<b>Hello wolrd</b>').appendTo('body');//<-- jQuery에서의 태그 추가 코드, jQuery가 코드 축약을 위해 많이 쓰인다는 사례중 하나
+
+		$('#div1').css('color', 'red');
+		//document.querySelector('#div1').style.color ='blue';//<-- 표준형과 jQuery형의 스타일 변경 비교
+
+		$('#div1').prop('class', 'bgRed');
+
+	 	var color = 'red';
+	/*	$('#btn1').bind('click', function() {
+			color = color == 'red' ? 'blue' : 'red';
+			$('#div1').css('background-color', color);
+		}); */
+
+
+		/* document.querySelector('#div1').addEventListener('click', function() {
+			color = color == 'red' ? 'blue' : 'red';
+			$('#div1').css('background-color', color);
+		}); */ //<--안쪽을 jquery로 바꿔서 코드를 축약 했을 뿐
+
+		
+		//jQuery 오브젝트는 배열형 오브젝트 이므로 다음과 같이 구할수 있다. 또한 Wrapper 클래스 이기에 해당 오브 젝트를 열면 표준 오브젝트가 나온다. 즉 표준 객체로 쓸수 있다.
+		/*  $('button')[0].addEventListener('click', function() {
+			color = color == 'red' ? 'blue' : 'red';
+			$('#div1').css('background-color', color);
+		});
+
+		$($('button')[0]).click(function() {
+			color = color == 'red' ? 'blue' : 'red';
+			$('#div1').css('background-color', color);
+		}); */
+		
+		
+		$('button').click(function() {
+			color = color == 'red' ? 'blue' : 'red';
+		    $(this).css('background-color', color);
+		});
+ 
+ 
+	}
+	//jQuery(document) : documemnt 표준 오브젝트를 jQuery가 받아서 몇가지 기능과 속성을 추가한 Wrapper 오브젝트를 만든다.
+</script>
+</head>
+<body>
+	<div id="div1" class="bgBlue">여기는 DIV1 입니다</div>
+
+	<button id="btn1">변경 버튼</button>
+</body>
+</html>
+<!-- Call Back : -->

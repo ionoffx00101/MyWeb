@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>입력 폼 만들기</title>
+<style type="text/css">
+
+/*스타일 지정시 태그를 지정하여 속성들의 그룹을 선언하면 된다*/
+body {
+	margin-top: 0px;
+	text-align: center;
+}
+
+table {
+	display: inline-block;
+	border: 1px solid black;
+}
+
+td {
+	width: 100px;
+	border-bottom: 1px dotted blue;
+	text-align: center;
+	border-right: 1px dotted black;
+}
+
+td.btrow {
+	border-bottom: none;
+}
+td.right{border-right: none;}
+td.head{border-bottom: double; background-color: lightgray;}
+
+</style>
+</head>
+<body>
+<h3>HTML 테이블 연습</h3>
+	<table>
+		<tr>
+			<td class="head">사번</td>
+			<td class="head right">이름</td>
+		</tr>
+		<tr>
+			<td>7369</td>
+			<td class="right">SMITH</td>
+		</tr>
+		<tr>
+			<td class="btrow" >8012</td>
+			<td class="btrow right">WARD</td>
+		</tr>
+	</table><br>
+	<a href="https://www.google.co.kr/"><img src="../Images/left.png"></a>
+	
+</body>
+</html>

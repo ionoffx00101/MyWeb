@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+	$(jqueryOk);
+	function jqueryOk() {
+		init();
+		setInterval(function name() {
+			$('div').css('margin-left', '-=2');
+			var mleft= $('div').css('margin-left').split('px')[0];
+			if(mleft<-100)init();
+		}, 30)
+
+	}
+	function init() {
+		$('div').css('margin-left', function name() {
+			return $(window).width()-110;
+		});
+		
+	}
+</script>
+</head>
+<body>
+
+	<div>공지문입니다</div>
+
+</body>
+</html>

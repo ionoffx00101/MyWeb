@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.large {
+	width: 1900px;
+	height: 1200px;
+}
+
+.small {
+	width: 500px;
+}
+a{cursor: pointer;}
+</style>
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+	$(jqueryOk);
+	function jqueryOk() {
+
+		$('#small').click(function() {
+			$('.large').removeClass('large').addClass('small');
+
+		});
+		$('#large').click(function() {
+			$('.small').removeClass('small').addClass('large');
+
+		});
+	}
+</script>
+</head>
+<body>
+	<img src="../Images/호수.jpg" class="small">
+	<a id="small">작게</a>
+	<a id="large">크게</a>
+</body>
+</html>

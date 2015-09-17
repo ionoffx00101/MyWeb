@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.addEventListener('load', function() {
+		var can = document.querySelector("#cv");
+		var ct = can.getContext("2d");
+		
+		ct.beginPath();
+		ct.rect(20,20,100,100);
+		ct.fillStyle='red';
+		ct.globalAlpha=0.2;
+		ct.fill();
+		ct.closePath();
+		
+		ct.beginPath();
+		ct.rect(40,40,100,100);
+		ct.fillStyle='red';
+		ct.globalAlpha=0.5;
+		ct.fill();
+		ct.closePath();
+		
+		
+		ct.beginPath();
+		ct.rect(60,60,100,100);
+		ct.fillStyle='red';
+		ct.globalAlpha=0.8;
+		ct.fill();
+		ct.closePath();
+		
+		
+		ct.beginPath();
+		ct.rect(80,80,100,100);
+		ct.fillStyle='red';
+		ct.globalAlpha=1;
+		ct.fill();
+		ct.closePath();
+		
+		
+		ct.beginPath();
+		ct.arc(180,180,50,0,2*Math.PI);
+		ct.globalAlpha=0.5;
+		ct.fillStyle="green";
+		ct.fill();
+		ct.closePath();
+	});
+</script>
+</head>
+<body>
+	<canvas id="cv" width="800" height="300"></canvas>
+</body>
+</html>

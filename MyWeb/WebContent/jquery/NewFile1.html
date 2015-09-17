@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+	$(jqueryOk);
+	function jqueryOk() {
+		$.get('product.jsp', function(res) {
+			console.log(res);
+			var jobj = eval('('+res+')');
+				
+			var $table = $('<table><caption>상품목록</caption></table>');
+			$('<tr><th>상품명</th><th>가격</th></tr>').appendTo($table);
+
+			for (var i = 0; i<jobj.length; i++) {
+				var title = jobj[i].title;
+				var price = jobj[i].price;
+				$('<tr><td>' + title + '</td><td>' + price + '</td></tr>')
+						.appendTo($table);
+			}
+			$('#div1').append($table);
+
+		});
+		
+		/*  ( function () {
+			alert('hello');
+			
+		})(); */
+	}
+</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>
+
+
+
+
+	 	<!-- var pdt;
+				var num = 0;
+				$('#product').append("<table id='pTable'></table>");
+				$('table').css('border-spacing','0px').css('border','1px solid black');
+				$('<tr><th>상품 번호 </th><th>상품명</th><th>가격</th></tr>').appendTo('table');
+				$(res).find('product').each(
+						function() {
+							var pro = $(this);
+							var title=pro.find('title').text();
+							var price=pro.find('price').text();
+							pdt = ++num + '. ' + title
+									+ ', price:' + price;
+							//console.log(pdt);
+							$('#pTable').append('<tr><td>'+num+'</td><td>'+title+'</td><td>'+price+'</td></tr>');
+						});
+				$('th').css('border','1px solid black');
+				$('td').css('border','1px solid black');  -->

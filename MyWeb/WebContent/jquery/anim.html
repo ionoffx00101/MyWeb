@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<style type="text/css">
+a {
+	cursor: pointer
+}
+</style>
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+	$(jqueryOk);
+	function jqueryOk() {
+		$('#lake').slideUp();
+		var on= false;
+		$('#slider').click(function() {
+          /*  $('#lake').slideToggle(1000,function(){
+        	   on=!on;
+        	   if(on)$('#slider').text('감추기');
+        	   else $('#slider').text('보이기');
+           }); */
+           
+           $('#lake').fadeToggle(1000,function(){
+        	   on=!on;
+        	   if(on)$('#slider').text('감추기');
+        	   else $('#slider').text('보이기');
+           });
+		});
+	}
+</script>
+
+<body>
+	<div>
+		<img id="lake" src="../Images/호수.jpg">
+	</div>
+	<a id="slider">보이기</a>
+
+</body>
+</html>

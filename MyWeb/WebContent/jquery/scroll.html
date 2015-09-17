@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+#text {
+	border: 1px solid #000;
+	width: 300px;
+	height: 500px;
+	overflow: scroll;
+}
+</style>
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+	$(jqueryOk);
+	function jqueryOk() {
+		var st=0;
+		setInterval(function() {
+			/* $('#text').append('<div>'+new Date().toString()+'</div>');
+			st+=100;
+			$('#text').scrollTop(st) */
+			
+			$('#text').prepend('<div>'+new Date().toString()+'</div>');
+			
+			console.log('scrollTop:'+ $('#text').scrollTop());
+		},1000);
+	}
+</script>
+</head>
+<body>
+	<div id="text"></div>
+	<button id="btn">증가</button>
+</body>
+</html>

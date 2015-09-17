@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+	$(jqueryOk);
+	function jqueryOk() {
+		
+		
+		$('#btn').click(function (evt) {
+			$('div').text(new Date().toString());
+		});
+
+		
+		setInterval(triggerOn, 1000);
+		
+		function triggerOn() {
+			$('#btn').trigger('click');
+		}
+	}
+	
+</script>
+</head>
+<body>
+	<div>시계</div>
+	<button type="button" id="btn">Start</button>
+</body>
+</html>

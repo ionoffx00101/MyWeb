@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="Anim.js"></script>
+<script type="text/javascript">
+	var can;
+	var ct;
+	var timer;
+	var isExp = false;
+	function Point(x, y) {
+		this.x = x;
+		this.y = y;
+	}
+
+	var expAnim = new Array();
+
+	window.addEventListener('load', function() {
+		can = document.querySelector("#cv");
+
+		can.addEventListener('click', function(evt) {
+			isExp = true;
+			expAnim.push(new Anim(can, evt.x - 32, evt.y - 32));
+
+		});
+		timer = setInterval(gameloop, 30);
+		ct = can.getContext("2d");
+	});
+
+	function gameloop() {
+		ct.clearRect(0, 0, can.width, can.height);
+		if (isExp) {
+			for (var i = 0; i < expAnim.length; i++)
+				expAnim[i].loop(ct);
+		}
+	}
+</script>
+<style type="text/css">
+canvas {
+	border: 1px solid black
+}
+</style>
+</head>
+<body>
+	<canvas id="cv" width="800" height="300"></canvas>
+</body>
+</html>

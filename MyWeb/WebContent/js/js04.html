@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var num = 2;
+	var b=1;
+
+	
+	
+	
+	window.addEventListener('load', function() {
+		
+		
+		var body = document.querySelector("body");
+		
+		body.addEventListener('click', function(evt) {
+			var audio = new Audio('../Images/shotgun.mp3');
+			
+			audio.play();
+			
+			var bullet = document.createElement("img");
+			bullet.src="../Images/탄흔.png";
+			bullet.style.position='absolute';
+			bullet.style.left=evt.x-15+'px';
+			bullet.style.top=evt.y-15+'px';
+			
+			
+			var body = document.querySelector("body");
+			body.appendChild(bullet);
+			
+			var bn=b;
+			bullet.setAttribute('id', 'b'+bn);
+			b++;
+			setTimeout(function name() {
+				var body = document.querySelector("body");
+				var bul =document.getElementById('b' + bn);
+				body.removeChild(bul);
+			},1000);
+		});
+		
+		
+		var btn1 = document.querySelector("#btn1");
+		btn1.addEventListener('click', function(evt) {
+			var input = document.createElement("input");
+			input.setAttribute('type', 'file');
+			input.setAttribute('name', 'file' + (++num));
+			input.setAttribute('id', 'file' + num);
+
+			var form = document.querySelector("form")
+			form.appendChild(input);
+		});
+
+		var btn2 = document.querySelector("#btn2");
+		btn2.addEventListener('click', function(evt) {
+			var form = document.querySelector("form");
+			var file = document.getElementById('file' + num--);
+
+			form.removeChild(file)
+			if (num < 1)
+				num = 1;
+		});
+
+		var btn = document.querySelector("#btn");
+		btn.addEventListener('click', function(evt) {
+			var img = document.createElement("img");
+			img.src = '../Images/leftA.png';
+			//document.body.appendChild(img);//바디 태그에 추가시
+
+			var div = document.querySelector("#div1");
+			div.appendChild(img);
+		});
+
+		var di = document.querySelector("#div1");
+		di.addEventListener('mouseover', function(evt) {
+			this.setAttribute('class', 'c1');
+		});
+		di.addEventListener('mouseout', function(evt) {
+			this.setAttribute('class', 'c2');
+		});
+	});
+</script>
+<style type="text/css">
+.c1 {
+	background-color: lightgray;
+}
+
+.c2 {
+	background-color: lightblue;
+}
+</style>
+</head>
+<body>
+	<button type="button" id="btn">이미지 호출</button>
+	<button type="button" id="btn1">전송 파일 추가</button>
+	<button type="button" id="btn2">전송 파일 제거</button>
+	<div id="div1" class="c1">test</div>
+	<form action="">
+		<input type="file" name="file1" id="file1">
+	</form>
+	<video src="../Images/매느님.mp4" controls="controls" autoplay="autoplay"></video>
+</body>
+</html>

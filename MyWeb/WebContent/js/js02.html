@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function init() {
+		var popWin = window.open('', 'popup',
+				'toolbar=no,status=no,width=300,height=200;');
+
+		var btn = document.querySelector("#btn");
+		btn.addEventListener('click', pop);
+
+		var btn1 = document.querySelector("#mouse");
+		btn1.addEventListener('mouseover', ma);
+		btn1.addEventListener('mouseout', mo);
+
+		var list = document.getElementsByTagName('tr')
+		for(var i=0;i<list.length;i++){
+		
+		list[i].addEventListener('mouseover', function() {
+			this.style.backgroundColor = 'red';
+
+		});
+		list[i].addEventListener('mouseout', function() {
+			this.style.backgroundColor = 'white';
+
+		});}
+		
+		
+	 var t1 = document.querySelector("#t1");
+			t1.addEventListener('mouseover', function(evt) { document.img.src= "../Images/rightA.png";	
+			});
+			t1.addEventListener('mouseout', function(evt) {document.img.src= "../Images/leftA.png";	
+		});
+		
+
+	}
+
+	function pop() {
+
+		var popWin1 = window.open('', 'popu',
+				'toolbar=no,status=no,width=300,height=200;');
+		popWin1.document.write(window.document.querySelector('#out').value);
+		window.document.querySelector('#out').value = "Hello";
+	}
+
+	function ma() {
+		//alert('너 이새퀴 함정카드에 걸렸구나');
+		var mouse = document.querySelector('#mouse')
+		mouse.style.backgroundColor = 'black';
+	}
+	function mo() {
+		var mouse1 = document.querySelector('#mouse')
+		mouse1.style.backgroundColor = 'purple';
+	}
+</script>
+</head>
+<body onload="init();">
+
+	<output id="out">안녕하세요</output>
+	<button type="button" id="btn">팝</button>
+	<div id="mouse" style="background-color: purple;">올려라</div>
+
+
+	<table>
+		<tr>
+			<td id="t1"><img src="../Images/leftA.png" name = "img"></td>
+			<td><img src="../Images/leftA.png"></td>
+		</tr>
+		<tr>
+			<td><img src="../Images/leftA.png"></td>
+			<td><img src="../Images/leftA.png"></td>
+		</tr>
+	</table>
+
+</body>
+</html>

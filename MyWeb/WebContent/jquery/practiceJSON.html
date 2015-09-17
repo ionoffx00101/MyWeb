@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+$(add1);
+ 
+function add1(){
+	$("#btn").click(function(){
+		
+		var name = $('#createName').val();
+		var email = $('#createEmail').val();
+		var phone =$('#createPhone').val();
+		
+		var obj = {"name": name, "email":email, "phone": phone};
+		var str = JSON.stringify(obj); //JSON을 문자열화 해준다.
+		obj = eval('('+str+')');
+		
+		
+	   $('#okName')[0].value = obj.name;	
+	   $('#okEmail')[0].value = obj.email;
+	   $('#okPhone')[0].value = obj.phone;
+	});
+ 
+	
+	
+}
+	
+</script>
+</head>
+<body>
+<!-- 텍스트필드에 입력된 이름, 이메일, 전화번호를 추출하여 JSON문자열을 만들고 다른 함수로 저달하면 그 함수는 이름, 이메일, 전화번호를 추출하여 화면에 출력한다. -->
+<form style="border:2px solid blue;">
+이름<input type="text" id="createName" ><br>
+메일<input type="text" id="createEmail"><br>
+전화<input type="text" id="createPhone"><br>
+</form>
+<button type="button" id="btn">확 인</button>
+<br><br>
+이름 : <output id='okName'></output><br>
+메일 : <output id='okEmail'></output><br>
+전화 : <output id='okPhone'></output><br>
+</body>
+</html>

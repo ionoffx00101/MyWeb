@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.bgBlue {
+	background-color: blue;
+}
+
+.bgRed {
+	background-color: red;
+}
+</style>
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+	$(jqueryOk);
+	function jqueryOk() {
+		var color = 'bgRed';
+
+		$('#btn1').click(function(evt) {
+
+			$('#div1').append('<div>추가 div</div>');
+
+			/* 	$('div>div').mouseover(function() {
+
+					$(this).css('color', 'blue').css('font-weight', 'bolder');
+
+				});
+				$('div>div').mouseout(function() {
+
+					$(this).css('color', 'black').css('font-weight', 'normal');
+
+				}); */
+
+			$('div>div').on({
+				mouseover : function(evt) {
+
+					$(this).css('color', 'blue').css('font-weight', 'bolder');
+
+				},
+				mouseout : function(evt) {
+
+					$(this).css('color', 'black').css('font-weight', 'normal');
+
+				}
+
+			});
+
+		});
+
+		/*
+		JSON: Javascript Object Notation
+		{key: value,  key2: value2, key3: value3.................}
+		 */
+
+		var obj = {
+			"name" : "Kang",
+			"phone" : "010-8547-6597"
+		};
+		var str = JSON.stringify(obj); //<--문자열로 만들어 담는 과정
+		obj = eval(eval("(" + str + ")"));
+		alert(obj.name);
+	}
+</script>
+</head>
+<body>
+	<div style='border: 5px solid blue;' id="div1"></div>
+	<button id="btn1">태그추가 버튼</button>
+
+</body>
+</html>

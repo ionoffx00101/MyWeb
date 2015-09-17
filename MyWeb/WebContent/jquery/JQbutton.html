@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+input[type=text] {
+	
+}
+</style>
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+	$(jqueryOk);
+	function jqueryOk() {
+		var a = 1;
+		$('#btn1').click(function() {
+			//$('#div1').text(a++);
+			alert($('#div1').text()); //text 안에 내용을 집어 넣을 경우 set(태그에 내용을 집어 넣는다)이 되고, 쓰지 않을 경우엔 get(태그의 내용을 가져온다)이 된다
+		});
+
+		/* $('#btn2').click(function() {
+			var arr = $('#div2').text().split(' ');
+			var num1= parseInt(arr[0]);
+			var num2= parseInt(arr[2]);
+			var ans=0;
+			if(arr[1]=='+') {ans = num1 + num2;}
+			
+			$('#div2').text(ans);
+		});  */
+
+		var num = 0;
+		$('#btn2').click(function() {
+			var str = $('#div2').text();
+			var ans = eval(str);
+			$('#div2').text(str + ' = ' + ans);
+
+			var arr = $('#div3').text().split(' ');
+			eval(arr[0] + ans + arr[1]);
+		});
+		var str = "function() { alert('호출 성공'); }";
+		eval('(' + str + ')();');
+
+	}
+</script>
+</head>
+<body>
+	<div id="div1">여기는 DIV1 입니다</div>
+	<div id="div2">10 + 20</div>
+	<div id="div3">alert( )</div>
+	<div id="div4"></div>
+	<button id="btn1">변경 버튼</button>
+	<button id="btn2">연산 버튼</button>
+</body>
+</html>

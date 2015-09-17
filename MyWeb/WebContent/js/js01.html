@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>자바 스크립트 테스트</title>
+<script type="text/javascript">
+	/* window.alert("alert test");
+	 window.alert(window.confirm("컨펌 테스트"));
+	 window.location.href='http://google.co.kr'; */
+	var colors = new Array('red', 'green', 'blue');
+	var num = 0;
+	function printInfo() {
+	/* 	var arrBall = new Array();
+		arrBall[0] = new Ball('red', 100, 110, 20);
+		arrBall[1] = new Ball('green', 120, 130, 30);
+		arrBall[2] = new Ball('blue', 140, 150, 40);
+		arrBall[3] = new Ball('white', 160, 170, 50);
+		/for (i = 0; i < arrBall.length; i++) {
+			arrBall[i].showInfo();
+		}
+		otherFun(arrBall[0]); */
+		var f = testFun;
+		otherFun(f);
+		
+	}
+/* 
+	function Ball(color, x, y, speed) {
+		this.color = color;
+		this.x = x;
+		this.y = y;
+		this.speed = speed;
+		this.showInfo = function() {
+			console.log('color:' + color + ', x:' + x + ', y:' + y + ', speed:'
+					+ speed);
+		}
+
+	}
+ */
+	
+	function otherFun(f) {
+		f();
+		/* ball.showInfo(); */
+	}
+	
+	function testFun(){alert('여기는 testFun()입니다')}
+	
+	function colorchange() {
+		document.bgColor = colors[num++];
+		if (num == 3)
+			num = 0;
+		console.log("버튼 눌림");
+
+	}
+</script>
+</head>
+<body>
+
+
+	<button type="button" onclick="javascript:colorchange()">배경 교체</button>
+	<button type="button" onclick="javascript:printInfo()">객체정보</button>
+</body>
+</html>

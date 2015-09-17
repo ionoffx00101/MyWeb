@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+var timer;
+
+
+window.addEventListener('load', function() {
+	/* timer=setInterval(arcAnim, 1000/36); */
+	
+	var can=document.querySelector("#cv");
+	//위의 문장을 다를방법으로 표현하는 두가지
+	/* var can= document.querySelectorAll('canvas')[0];
+	var can= document.getElementById('cv');
+	var can= document.getElementsByTagName('canvas')[0]; */
+	var ct = can.getContext("2d");
+	ct.rect(0,0,150,75);
+	ct.fillStyle='#ffff00';
+	ct.fill();
+	ct.lineWidth=5;
+	ct.strokeStyle="#000000";
+	ct.stroke();
+	
+	
+	
+	ct.beginPath();
+	ct.moveTo(250,75);
+	ct.lineTo(250,200);
+	ct.lineTo(200,200);
+	ct.closePath();
+	ct.fillStyle="#yellow";
+	ct.fill();
+	ct.lineWidth=3;
+	ct.strokeStyle="black";
+	ct.stroke();
+	
+	
+	
+	ct.beginPath();
+	ct.moveTo(270,75);
+	ct.lineTo(270,200);
+	ct.lineTo(320,200);
+	ct.closePath();
+	ct.fillStyle="green";
+	ct.fill();
+	ct.lineWidth=3;
+	ct.strokeStyle="blue";
+	ct.stroke();
+	
+	var i=0;
+	setInterval(function () {
+		ct.beginPath();
+		ct.moveTo(400,70);
+		ct.lineTo(450,70);
+		ct.arc(400,70,50,0,i*Math.PI/180);
+		ct.closePath();
+        ct.strokeStyle="blue";
+		ct.lineCap='butt';
+        ct.stroke();
+		
+		ct.fillStyle="cyan";
+		ct.fill();
+		
+		i++;
+	/* 	if(i>=200)clearInterval(timer); */
+		 if(i==360){
+			ct.clearRect(345,0,can.width,can.height);
+			i=0;
+		} 
+		
+	}, 50);
+});
+</script>
+</head>
+<body>
+<canvas id="cv" width="700" height="500"></canvas>
+</body>
+</html>

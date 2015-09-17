@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>회원 리스트</title>
+<script type="text/javascript">
+	function checkForm() {
+		var category = form1.cmd.value;
+		if (category == '') {
+			alert('정보입력을 부탁드립니다');
+			return;
+		}
+		form1.submit();
+	}
+</script>
+</head>
+<body>
+	<!-- 주석, 링크 예제
+     a: anchor: 닻 get 방식요청(돌아오는 값을 요구하기 위해서 쓰는 타입)
+     
+     -->
+	<a href="/MyWeb/MS?num=1">1번 회원</a> 정보
+	<br>
+	<a href="/MyWeb/MS?num=2">2번 회원</a> 정보
+	<br>
+	<a href="/MyWeb/MS?num=3">3번 회원</a> 정보
+	<br>
+	<a href="/MyWeb/MS?num=4">4번 회원</a> 정보
+	<br>
+	<a href="/MyWeb/MS?num=5">5번 회원</a> 정보
+	<br>
+	<p>
+		<!--Phase, 문단-->
+	<form name="form1" method="post" action="/MyWeb/MS">
+		번호로 검색 <input type="radio" name="cmd" value="serchByNum">
+		이름으로 검색 <input type="radio" name="cmd" value="serchByName">
+		검색 키워드 <input type="text" name="key"><br>
+		<!-- 회원번호<input type="text" name="num"><br> -->
+		<!-- <input type = "submit" value="회원정보보기"> -->
+		<button type="button" onclick="javascript:checkForm();">회원정보
+			보기</button>
+	</form>
+</body>
+</html>

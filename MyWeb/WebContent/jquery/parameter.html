@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+	$(jqueryOk);
+	function jqueryOk() {
+		$.post('product3.jsp', {
+			"num" : "1"
+		}, function(res) {
+			/*  console.log(res);
+			var jobj = eval('(' + res + ')');  */
+
+			var $table = $('<table><caption>상품목록</caption></table>');
+			$('<tr><th>상품명</th><th>가격</th></tr>').appendTo($table);
+
+			$('<tr><td>' + res.title + '</td><td>' + res.price + '</td></tr>')
+					.appendTo($table);
+			$('#div1').append($table);
+
+		}, 'json');
+
+	}
+</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

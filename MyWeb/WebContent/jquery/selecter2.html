@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.bgBlue {
+	background-color: blue;
+}
+
+.bgRed {
+	background-color: red;
+}
+</style>
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+	$(jqueryOk);
+	function jqueryOk() {
+		var color = 'bgRed';
+		
+		
+	/* 	$('#btn1').click(function() {
+
+			$('div>div:gt(0)').css('color', 'blue').css('font-weight','bolder');;
+		
+		}); */
+		
+		
+		
+		
+		$('div>div').mouseover(function() {
+
+			$(this).css('color', 'blue').css('font-weight','bolder');
+		
+		});
+		$('div>div').mouseout(function() {
+
+			$(this).css('color', 'black').css('font-weight','normal');
+		
+		});
+		$('div>div').click(function(evt) {
+
+			$(this).css('color', 'red')
+		
+		});
+	}
+</script>
+</head>
+<body>
+	<div style='border: 5px solid blue;'>
+		<div>first</div>
+		<div>Second</div>
+		<div>Third</div>
+		<div>Fourth</div>
+	</div>
+	<button id="btn1">배경 변경 버튼</button>
+
+</body>
+</html>

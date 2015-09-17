@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="Anim.js"></script>
+<script type="text/javascript">
+	var can;
+	var ct;
+	var timer;
+
+	function Point(x, y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	var expAnim;
+	window.addEventListener('load', function() {
+		can = document.querySelector("#cv");
+		ct = can.getContext("2d");
+
+		expAnim = new Anim(can, 100, 100);
+		timer = setInterval(gameloop, 30);
+
+	});
+
+	function gameloop() {
+		expAnim.loop(ct);
+	}
+</script>
+<style type="text/css">
+canvas {
+	border: 1px solid black
+}
+</style>
+</head>
+<body>
+	<canvas id="cv" width="800" height="300"></canvas>
+</body>
+</html>

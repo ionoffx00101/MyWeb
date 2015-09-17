@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<products>
+   <product>
+      <title>Super Programmer Robot 3000</title>
+      <price>Price: $1,635,343.99</price>
+      <description>
+      Need code written in a hurry? No time to hire a human programmer?
+      This is the product for you! Fluent in over 30 programming
+      languages: C#, C, Java, PHP, Ruby, Python, JavaScript, Perl,
+      Basic, COBOL, FORTRAN, ADA, PASCAL, and many more. Just explain
+      to the robot what you need and it automatically converts your
+      request into a perfectly coded, bug-free application!
+      </description>
+      <url>product-01.html</url>
+   </product>
+   <product>
+       <title>Web Programmer Robot 2000</title>
+       <price>Price: $675,287.99</price>
+       <description>
+       Need a quick Web application? While not fluent in as many
+       programming languages as the Super Programmer Robot 3000, this
+       robot can code Web applications like no other! Why? Because in
+       addition to knowing Web programming languages like PHP, Python,
+       and Ruby, this robot knows HTML and CSS as well! A great buy at
+       this price!
+       </description>
+       <url>product-02.html</url>
+   </product>
+   <product>
+       <title>The Dougnick Res, I.G.</title>
+       <price>Price: $1,002,875.99</price>
+       <description>
+       The Dougnick Res, Internet Guru is a specialized JavaScript
+       programming robot. It can literally make anything in JavaScript!
+       Chapter 9: Working with AJAX 249
+       We currently have a limited supply so act today!
+       </description>
+       <url>product-03.html</url>
+   </product>
+</products>
