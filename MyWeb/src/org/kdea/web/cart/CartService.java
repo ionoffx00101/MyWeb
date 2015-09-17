@@ -1,8 +1,6 @@
 package org.kdea.web.cart;
 
 import java.sql.Date;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -58,31 +56,6 @@ public class CartService {
 			request.getSession().setAttribute("cart", cart);
 		}
 		return cart;
-	}
-	
-	public int getTotal(){
-		CartMgr cart=(CartMgr) request.getSession().getAttribute("cart");
-		return cart.getTotal();
-	}
-	
-	public boolean removeItem(){
-		CartMgr cart = (CartMgr) request.getSession().getAttribute("cart");
-		int idx=Integer.parseInt(request.getParameter("idx"));
-		
-		return cart.removeItem(idx);
-	}
-	public boolean updateItem(){
-		CartMgr cart = (CartMgr) request.getSession().getAttribute("cart");
-
-		int idx=Integer.parseInt(request.getParameter("idx"));
-		int qty =Integer.parseInt(request.getParameter("qty"));
-		
-		return cart.updatedItem(idx,qty);
-	}
-	public boolean cleanItem(){
-		CartMgr cart = (CartMgr) request.getSession().getAttribute("cart");
-
-		return cart.cleanItem();
 	}
 
 }
