@@ -18,7 +18,7 @@ public class UserServlet extends HttpServlet {
 		UserService svc = new UserService(request);
 		String viewPath = null;
 		
-		//if(cmd==null || cmd.equals("")) cmd = "joinForm";
+		if(cmd==null || cmd.equals("")) cmd = "loginForm";
 		
 		try {
 			Method method = svc.getClass().getMethod(cmd);
