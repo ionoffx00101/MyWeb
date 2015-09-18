@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-  <jsp:useBean id="user" class="org.kdea.web.cart.UserVO">
+  <jsp:useBean id="user" class="org.kdea.web.servlet.cart.UserVO">
 <jsp:setProperty property="*" name="user" />
 </jsp:useBean>
 

@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
-<%@ page import="org.kdea.web.cart.*" %>
+<%@ page import="org.kdea.web.servlet.cart.*" %>
 <%@ page import="java.util.*" %>
 <% 
 

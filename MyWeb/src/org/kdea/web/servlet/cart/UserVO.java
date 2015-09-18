@@ -1,6 +1,6 @@
 package org.kdea.web.servlet.cart;
 
-public class UserVO {
+public class UserVO { //login 할때 쓰는 VO  로그인 여부 체크할때도 사용한다.
 
 	private String id;
 	private String name;

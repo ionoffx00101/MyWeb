@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
-<jsp:useBean id="user" class="org.kdea.web.cart.UserVO" scope="session" />
+<jsp:useBean id="user" class="org.kdea.web.servlet.cart.UserVO" scope="session" />
 <!DOCTYPE html >
 <html>
 <head>

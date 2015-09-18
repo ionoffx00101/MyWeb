@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
-<%@ page import="java.util.*" %>
+<%@ page import="org.kdea.web.servlet.cart.*" %>
 <%@ include file ="login_ok.jsp"%>
 <!DOCTYPE html>
 <html>

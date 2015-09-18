@@ -1,10 +1,10 @@
 <%@ page import="org.kdea.web.*"%>
 <%@ page contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
-<jsp:useBean id="user" class="org.kdea.web.cart.UserVO">
+<jsp:useBean id="user" class="org.kdea.web.servlet.cart.UserVO">
 <jsp:setProperty property="*" name="user" />
 </jsp:useBean>
 
-<jsp:useBean id="svc" class="org.kdea.web.cart.LoginService"/>
+<jsp:useBean id="svc" class="org.kdea.web.servlet.cart.LoginService"/>
 <jsp:setProperty property="request" name="svc" value="<%=request%>"/>
 <% 
 boolean check = svc.login(user);
