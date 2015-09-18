@@ -15,6 +15,11 @@ public class UserService {
 	}
 
 	public String user_ok() {
+		request
+		
+	if(true && true){
+		
+		
 		
 		return "/0918_servelt_cart/login_check.jsp";
 	}

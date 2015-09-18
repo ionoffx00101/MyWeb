@@ -17,9 +17,10 @@ public void setRequest(HttpServletRequest request) {
 
 
 public boolean login(UserVO user){
-	
+	UserVO user = new UserVO();
 	UserDAO dao = new UserDAO();
-
+user = (UserVO) request.getAttribute("user");
+	
 	boolean check =false;
 	
 	if (user.getId()!=null){
