@@ -8,7 +8,7 @@
 <jsp:setProperty property="request" name="svc" value="<%=request%>"/>
 <% 
 boolean check = svc.login(user);
-user.setCheck(check);
+session.setAttribute("check", check);
 %>
 <!DOCTYPE html >
 <html>
@@ -32,6 +32,6 @@ div #divLnk{visibility: hidden;}
 </style>
 </head>
 <body>
-<div id="divLnk"><a href="../0918_newcart/books.jsp">책 리스트</a></div>
+<div id="divLnk"><a href="books.jsp">책 리스트</a></div>
 </body>
 </html>

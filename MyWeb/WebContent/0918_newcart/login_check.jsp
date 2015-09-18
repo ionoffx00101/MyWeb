@@ -8,7 +8,7 @@
 <jsp:setProperty property="request" name="svc" value="<%=request%>"/>
 <% 
 boolean check = svc.login(user);
-user.setCheck(check);
+session.setAttribute("check", check);
 %>
 <!DOCTYPE html >
 <html>
