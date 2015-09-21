@@ -17,17 +17,15 @@ public void setRequest(HttpServletRequest request) {
 
 
 public boolean login(UserVO user){
-	UserVO user = new UserVO();
-	UserDAO dao = new UserDAO();
-user = (UserVO) request.getAttribute("user");
 	
+	UserDAO dao = new UserDAO();
+System.out.println(user.getId()+"getid");
 	boolean check =false;
 	
 	if (user.getId()!=null){
 	check = dao.checkEmp(Integer.parseInt(user.getId()),user.getName());
-	//user.setCheck(check);
 	}	
-	
+	System.out.println("123"+check);
 	return check;
 }
 

@@ -14,7 +14,7 @@
 <div id="div1">
 login<br><br>
 
-<form action="/MyWeb/UserServlet">
+<form action="/MyWeb/UserServlet" >
 <input type="hidden" name="cmd" value="user_ok">
 	id : <input type="text" name ="id" id="id" value="7839"><br> 
 	name : <input type="text" name ="name" id="name" value="KING"><br>

@@ -1,4 +1,4 @@
-package org.kdea.web.servlet.cart;
+package org.kdea.web.connectpool;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,21 +15,22 @@ public abstract class AbstractDAO {
 
 	public Connection getConn() {
 		
-		Context initCtx;
-		DataSource ds;
-		Connection conn = null;
 		try {
+			Context initCtx;
+			DataSource ds;
+			Connection conn = null;
 			initCtx = new InitialContext();
 			ds = (DataSource) initCtx.lookup("java:comp/env/jdbc/MyDataSource");//data source는 커넥션 풀에서 커넥션을 가져다줄수있다
 			System.err.println("DS :"+ds.toString());
 			conn = ds.getConnection();
+			return conn;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	
 		
-		return conn;
+		return null;
 	}
 
 	public void closeAll() {

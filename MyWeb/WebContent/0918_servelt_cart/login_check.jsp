@@ -1,8 +1,13 @@
 <%@ page import="org.kdea.web.*"%>
 <%@ page contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<jsp:useBean id="user" class="org.kdea.web.cart.UserVO">
+<jsp:setProperty property="*" name="user" />
+</jsp:useBean>
 
+<jsp:useBean id="svc" class="org.kdea.web.cart.LoginService"/>
+<jsp:setProperty property="request" name="svc" value="<%=request%>"/>
 <% 
-boolean check = request.getAttribute("check");
+boolean check = (boolean) session.getAttribute("check");
 session.setAttribute("check", check);
 %>
 <!DOCTYPE html >
@@ -19,16 +24,14 @@ $('#divLnk').css("visibility","visible");
 }
 else{
 	alert("로그인실패");
-	location.href="login.jsp";
+	location.href="/MyWeb/UserServlet";
 	}
 </script>
 <style type="text/css">
 div #divLnk{visibility: hidden;}
 </style>
 </head>
-<body><form action="/MyWeb/UserServlet">
-<input type="hidden" name="cmd" value="booklist">
-<button type="submit" id="divLnk">책 리스트</button>
-</form>
+<body>
+<div id="divLnk"><a href="../0918_newcart/books.jsp">책 리스트</a></div>
 </body>
 </html>
