@@ -1,7 +1,7 @@
 <Context>
 	<Resource name="jdbc/MyDataSource" auth="Container" type="javax.sql.DataSource"
 		maxActive="10" maxIdle="3" maxWait="10000" username="scott" password="TIGER"
-		driverClassName="oracle.jdbc.OracleDriver" url="jdbc:oracle:thin:@localhost:1521:xe" />
+		driverClassName="oracle.jdbc.OracleDriver" url="jdbc:oracle:thin:@192.168.8.19:1521:xe" />
 </Context>
 
 <!-- Context initCtx = new IntialContext();
