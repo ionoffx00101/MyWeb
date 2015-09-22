@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+
+ <head>
+ <meta charset="utf-8">
+ <title>Upload page</title></head><body>
+
+ <form action="apacheUpload.jsp" method="post" enctype="multipart/form-data" name="form1" id="form1">
+<!-- enctype="multipart/form-data"는 꼭 필요하다. 폼타입이 텍스트만이 아니라는걸 알려줌 -->
+   <table>
+
+    <tr>
+
+        <td><b>Multiple file Upload</b></td>
+
+    </tr>
+
+       <tr>
+
+        <td><b>작성자: </b><input type="text" name="name" value="홍길동"></td>
+
+    </tr>
+
+       <tr>
+
+        <td><b>설명:</b> <input type="text" name="desc" value="테스트용 업로드 파일"></td>
+
+    </tr>
+
+       <tr>
+
+        <td>
+
+         File 1: <input name="file" type="file"><!-- 타입 파일하면 파일 보낼수있는 폼이 생긴다 이름(name)을 같이 해서 서버에서 루프돌려서 받는게 유리하다-->
+
+     <td>
+
+    </tr>
+
+    <tr>
+
+       <td>
+
+       File 2:<input name="file" type="file">
+
+    </td>
+
+        <tr>
+
+     <td>
+
+        File 3:<input name="file" type="file">
+
+     </td>
+
+   </tr>
+
+   <tr>
+
+      <td>
+
+        <input type="submit" name="Submit" value="Submit files"/>
+
+   </td>
+
+   </tr>
+
+    </table>
+
+ </form>
+
+ </body>
+
+ </html>
