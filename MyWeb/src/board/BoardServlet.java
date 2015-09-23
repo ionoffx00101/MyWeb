@@ -11,43 +11,35 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class BoardServlet
  */
-@WebServlet("/Board/*")
+@WebServlet("/Board")
 public class BoardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
  
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
-		String[] cmdArr= parseUri(request);
-		String cmd = cmdArr[1];
-		
-		if(cmd==null || cmd.equals("*")) cmd = "inputForm";
-		
-		try {
-			BoardService ls = new BoardService(request);
-			Class<?>[] clsArgs = new Class[0];
-			String viewPath = null;
-			if(cmdArr.length==2){
-				Method m = ls.getClass().getMethod(cmd, clsArgs);
-				viewPath = (String) m.invoke(ls);
-			}else if(cmdArr.length==3){
-				clsArgs = new Class[1];
-				clsArgs[0]=String.class;
-				Method m =ls.getClass().getMethod(cmd, clsArgs);
-				viewPath = (String)m.invoke(ls, new String[]{cmdArr[2]});
-			}
-			System.out.println("viewpath" +viewPath);
-			request.getRequestDispatcher(viewPath).forward(request, response);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+	
+			String cmd = request.getParameter("cmd");
 
-	private String[] parseUri(HttpServletRequest request) {
-		String uri=request.getRequestURI();
-		String ctxPath=request.getContextPath();
-		String uri2=uri.replace(ctxPath+"/", "");//board/'
-		return uri2.split("/");
-	}
+			if (cmd == null || cmd.equals("")) {
+				cmd = "list";
+			}
+
+			exec(cmd, request, response);
+
+		}
+
+		protected void exec(String cmd, HttpServletRequest request,
+				HttpServletResponse response) throws ServletException, IOException {
+			BoardService es = new BoardService(request);
+			String viewPath = null;
+
+			try {
+				Method method = es.getClass().getMethod(cmd);
+				viewPath = (String) method.invoke(es);
+				request.getRequestDispatcher(viewPath).forward(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 
 }
