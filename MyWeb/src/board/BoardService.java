@@ -21,19 +21,20 @@ public class BoardService {
 		
 		//List<BoardVO> list = dao.getAllBoard();
 		//request.setAttribute("list", list);
-		return "/board/list.jsp";
+		return "/board/inputForm.jsp";
 	}
 	
 	public String inputForm() {
 		
+		System.out.println("inputfrome"+request.getParameter("title"));
 		return "/board/inputForm.jsp";
 	}
 	
 	public boolean postsWrite(){
-		System.out.println("서비스"+request.getParameter("title"));
+		System.out.println("서비스의"+request.getParameter("title"));
 			BoardVO vo = new BoardVO();
 			vo.setTitle(request.getParameter("title"));
-			vo.setWdate(Date.valueOf(request.getParameter("pubdate")));
+			//vo.setWdate(Date.valueOf(request.getParameter("pubdate")));
 
 		
 		

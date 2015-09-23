@@ -1,27 +1,26 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <title>글쓰기</title>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
-$(it);
+ $(it);
 	function it() {
 		
 		$('button[class=btn_write]').on('click', function() {
 			alert("알람");
 		 	$.ajax({
 				type : 'post',
-				url : "posts_write.jsp",
+				url : "../board/posts_write.jsp",
 				dataType : 'json',
 				data : {
-					"check":"check"
+					"request":"request"
 				},
 				success : function(res) {
 					if (res.check) {
 						alert("ㅇㅋ");
-						$('#total').text(res.total + "원");
 					} else {
 						alert("ㄴㄴ");
 					}
@@ -32,11 +31,34 @@ $(it);
 			});
 		}); 
 	}
+	 
+	/* $(it);
+	function it() {
+		$('button[class=btn_write]').on('click', function() {
+			var serializeData = $('#form').serialize();
+
+			$.post("board/posts_write.jsp", serializeData, function(res) {
+
+				if (res.check) {
+					alert("ㅇㅇ.");
+				} else {
+					alert("ㄴㄴ");
+				}
+
+			}, 'json');
+		});
+		
+		$('#btn_cart_view').on('click', function() {
+
+		
+		});
+
+	} */
 </script>
 </head>
 <body>
 
-	<form action="Board" enctype="multipart/form-data">
+	<form id="form" enctype="multipart/form-data">
 		<!-- ../Board  Board?cmd=inputForm-->
 		<input type="hidden" name="cmd" value="inputForm">
 		<h2>글쓰기</h2>
